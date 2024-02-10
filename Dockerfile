@@ -7,13 +7,10 @@ ENV PYTHONUNBUFFERED 1
 
 RUN apt-get update
 # Set the working directory in the container
-WORKDIR /code
+WORKDIR /first_project
 
 # Copy the current directory contents into the container at /code
-COPY . /code/
-
-# Change directory to the Django project folder
-WORKDIR /code/first_project
+COPY . /first_project/
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --upgrade pip && pip install -r requirements.txt
